@@ -4,15 +4,21 @@
 # importing libraries
 import numpy
 import cv2
-import time
+import os
 
 # initialize the camera If you have multiple camera connected with current device, assign a value in cam_port variable according to that
 cam_port = 0
 cam = cv2.VideoCapture(cam_port)
 
-# repeat 32 times (0-31 inclusive)
+#location of images
+directory = r"C:\Users\Jacob Lee\Desktop\Coding\PycharmProjects\nanolab\pictures"
+
+#change to the directory above
+os.chdir(directory)
+
+# repeat 31 times (0-30 inclusive)
 dayCounter = 0
-while dayCounter <= 31:
+while dayCounter <= 30:
 
     # reading the input using the camera
     result, image = cam.read()
